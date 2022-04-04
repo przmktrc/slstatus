@@ -50,8 +50,8 @@
 			char *state;
 			char *symbol;
 		} map[] = {
-			{ "Charging",    "+" },
-			{ "Discharging", "-" },
+			{ "Charging",    "" },
+			{ "Discharging", "" },
 			{ "Full",        "o" },
 		};
 		size_t i;
