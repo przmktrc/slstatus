@@ -63,16 +63,22 @@ static const char unknown_str[] = "n/a";
  * wifi_perc           WiFi signal in percent          interface name (wlan0)
  * wifi_essid          WiFi ESSID                      interface name (wlan0)
  */
+
+
 static const struct arg args[] = {
 	/* function format          argument */
 	// { keyboard_indicators, " [ %s ] ",          "c"             },
-	{ wifi_perc,           " [ 直   %s%% ] ",    "wlan0"         },
-	// { netspeed_rx,         " [ 直    %s",        "wlan0"        },
-	// { netspeed_tx,         "  %s ] ",           "wlan0"        },
+	{ wifi_perc,           " [ 直   %s%% ] ",     "wlan0"         },
+	//{ netspeed_rx,         " %s/",               "wlan0"        },
+	//{ netspeed_tx,         " %s ] ",             "wlan0"        },
 	{ run_command,         " [ 墳  %s",           "amixer sget Master | grep '%' | awk -F '[][]' '{ print $2 }' | head -1" },
 	{ run_command,         " %s ] ",             "amixer sget Master | grep '%' | awk -F '[][]' '{ print $4 }' | head -1" },
 	{ battery_perc,        " [    %s%%",        "BAT0"         },
 	{ battery_state,       " %s ] ",             "BAT0"         },
+	// { disk_perc,           " [ 力  %s%%",         "/" },
+	// { disk_perc,           " | %s%% ] ",         "/home" },
+	// { run_command,         " [ 力  %s",           "df | awk '/\\/$/ { print $5 }'"  },
+	// { run_command,         " | %s ] ",           "df | awk '/\\/home$/ { print $5 }'"  },
 	{ cpu_perc,            " [ CPU  %s%% ] ",    NULL           },
 	{ ram_perc,            " [ RAM  %s%% /",     NULL           },
 	{ swap_perc,           " %s%% ] ",           NULL           },
